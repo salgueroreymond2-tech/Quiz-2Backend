@@ -3,5 +3,15 @@
   { "sku": "EPA-VAR-3", "descripcion": "Varilla #3 6 m", "precio": "2600", "disponible": true },
   { "sku": "EPA-NIT-L", "descripcion": "Guante nitrilo grande", "precio": "900", "disponible": true },
   { "sku": "EPA-TRA-L", "descripcion": "Guante trabajo grande", "precio": "1300", "disponible": true },
-  { "sku": "EPA-PVC-12", "descripcion": "Tubo PVC 1/2 SDR", "precio": "3050", "disponible": true }
+  { "sku": "EPA-PVC-12", "descripcion": "Tubo PVC 1/2 SDR", "precio": "3050", "disponible": true },
+  { "sku": "EPA-BLO-12", "descripcion": "Block de concreto 12 cm", "precio": "880", "disponible": true },
+  { "sku": "EPA-ARE-M3", "descripcion": "Arena lavada por metro cúbico", "precio": "26000", "disponible": true },
+  { "sku": "EPA-GRA-M3", "descripcion": "Grava triturada por metro cúbico", "precio": "31500", "disponible": true },
+  { "sku": "EPA-CLA-2", "descripcion": "Clavo de acero 2 pulgadas", "precio": "2250", "disponible": true },
+  { "sku": "EPA-TOR-DRY-1", "descripcion": "Tornillo drywall 1 pulgada", "precio": "3650", "disponible": true },
+  { "sku": "EPA-PIN-ACR", "descripcion": "Pintura acrílica blanca", "precio": "23500", "disponible": true },
+  { "sku": "EPA-PVC-34", "descripcion": "Tubo PVC 3/4 SDR 13.5", "precio": "4300", "disponible": true },
+  { "sku": "EPA-TOM-20A", "descripcion": "Tomacorriente doble 20A", "precio": "3950", "disponible": true },
+  { "sku": "EPA-ADH-118", "descripcion": "Adhesivo PVC 118 ml", "precio": "2500", "disponible": true },
+  { "sku": "EPA-CAS-AMA", "descripcion": "Casco de seguridad amarillo", "precio": "8100", "disponible": true }
 ]

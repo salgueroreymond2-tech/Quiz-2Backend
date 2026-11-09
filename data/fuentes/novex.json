@@ -3,5 +3,15 @@
   { "sku": "NX-VAR-3", "descripcion": "Varilla #3 grado 40", "precio": "₡2 300", "disponible": true },
   { "sku": "NX-GUA-NIT-L", "descripcion": "Guantes nitrilo talla L", "precio": "₡850", "disponible": true },
   { "sku": "NX-GUA-TRA-L", "descripcion": "Guantes trabajo talla L", "precio": "₡1 250", "disponible": true },
-  { "sku": "NX-PVC-12", "descripcion": "Tubo PVC 1/2 SDR 13.5", "precio": "₡3 000", "disponible": true }
+  { "sku": "NX-PVC-12", "descripcion": "Tubo PVC 1/2 SDR 13.5", "precio": "₡3 000", "disponible": true },
+  { "sku": "NX-BLO-12", "descripcion": "Block de concreto 12 cm", "precio": "850", "disponible": true },
+  { "sku": "NX-ARE-M3", "descripcion": "Arena lavada por metro cúbico", "precio": "25500", "disponible": true },
+  { "sku": "NX-GRA-M3", "descripcion": "Grava triturada por metro cúbico", "precio": "31000", "disponible": true },
+  { "sku": "NX-CLA-2", "descripcion": "Clavo de acero 2 pulgadas", "precio": "2100", "disponible": true },
+  { "sku": "NX-TOR-DRY-1", "descripcion": "Tornillo drywall 1 pulgada", "precio": "3500", "disponible": true },
+  { "sku": "NX-PIN-ACR", "descripcion": "Pintura acrílica blanca", "precio": "22500", "disponible": true },
+  { "sku": "NX-PVC-34", "descripcion": "Tubo PVC 3/4 SDR 13.5", "precio": "4100", "disponible": true },
+  { "sku": "NX-TOM-20A", "descripcion": "Tomacorriente doble 20A", "precio": "3800", "disponible": true },
+  { "sku": "NX-ADH-118", "descripcion": "Adhesivo PVC 118 ml", "precio": "2400", "disponible": true },
+  { "sku": "NX-CAS-AMA", "descripcion": "Casco de seguridad amarillo", "precio": "7800", "disponible": true }
 ]
