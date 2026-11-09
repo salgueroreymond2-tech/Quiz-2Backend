@@ -1,5 +1,7 @@
 import { rows } from '../db/query.js';
 
+const normalizarAlerta = (alerta) => alerta ? { ...alerta, leida: Boolean(alerta.leida) } : null;
+
 export async function crearAlertaSiCorresponde({ equivalenciaId, capturaAnteriorId, capturaNuevaId, precioAnterior, precioNuevo, umbral }, connection) {
   const variacionSql = 'ROUND(((CAST(? AS DECIMAL(14,2))-CAST(? AS DECIMAL(14,2)))/CAST(? AS DECIMAL(14,2)))*100,4)';
   const resultado = await rows(`INSERT IGNORE INTO alertas_precio
@@ -11,16 +13,17 @@ export async function crearAlertaSiCorresponde({ equivalenciaId, capturaAnterior
     precioNuevo, precioAnterior, precioAnterior, umbral], connection);
   if (!resultado.affectedRows) return null;
   const alerta = await rows('SELECT * FROM alertas_precio WHERE captura_nueva_id=?', [capturaNuevaId], connection);
-  return alerta[0] ?? null;
+  return normalizarAlerta(alerta[0]);
 }
 export async function listAlertas({ soloNoLeidas = false, limit = 50 } = {}) {
-  return rows(`SELECT a.*,p.codigo_interno,p.nombre AS producto_nombre,pr.nombre AS proveedor_nombre
+  const alertas = await rows(`SELECT a.*,p.codigo_interno,p.nombre AS producto_nombre,pr.nombre AS proveedor_nombre
     FROM alertas_precio a JOIN equivalencias e ON e.id=a.equivalencia_id JOIN productos p ON p.id=e.producto_id
     JOIN proveedores pr ON pr.id=e.proveedor_id ${soloNoLeidas ? 'WHERE a.leida=FALSE' : ''}
     ORDER BY a.creada_en DESC,a.id DESC LIMIT ?`, [limit]);
+  return alertas.map(normalizarAlerta);
 }
 export async function marcarLeida(id) {
   await rows('UPDATE alertas_precio SET leida=TRUE WHERE id=?', [id]);
   const alerta = await rows('SELECT * FROM alertas_precio WHERE id=?', [id]);
-  return alerta[0] ?? null;
+  return normalizarAlerta(alerta[0]);
 }
