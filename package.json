@@ -1,0 +1,30 @@
+{
+  "name": "comparador-precios-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "API académica para comparar precios de materiales de construcción.",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "db:setup": "node scripts/setup-db.js",
+    "db:setup:test": "node scripts/setup-db.js --test",
+    "test": "node scripts/run-tests.js",
+    "demo": "node scripts/demo.js",
+    "frontend:dev": "npm --workspace frontend run dev",
+    "frontend:build": "npm --workspace frontend run build"
+  },
+  "workspaces": ["frontend"],
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0",
+    "node-cron": "^4.0.7",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.0",
+    "vitest": "^5.1.0"
+  }
+}

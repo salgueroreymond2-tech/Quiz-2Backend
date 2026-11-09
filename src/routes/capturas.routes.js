@@ -1,0 +1,2 @@
+import { Router } from 'express'; import * as controller from '../controllers/capturas.controller.js'; import { validate } from '../middleware/validate.js'; import { asyncHandler } from '../utils/asyncHandler.js'; import { ejecutarCapturaSchema, ejecucionesQuerySchema } from '../schemas/comunes.schemas.js';
+const router = Router(); router.post('/ejecutar', validate(ejecutarCapturaSchema), asyncHandler(controller.ejecutar)); router.get('/ejecuciones', validate(ejecucionesQuerySchema, 'query'), asyncHandler(controller.ejecuciones)); export default router;

@@ -1,0 +1,2 @@
+import { Router } from 'express'; import * as controller from '../controllers/proveedores.controller.js'; import { validate } from '../middleware/validate.js'; import { asyncHandler } from '../utils/asyncHandler.js'; import { proveedorSchema } from '../schemas/comunes.schemas.js';
+const router = Router(); router.get('/', asyncHandler(controller.listar)); router.post('/', validate(proveedorSchema), asyncHandler(controller.crear)); export default router;

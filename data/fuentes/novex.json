@@ -1,0 +1,7 @@
+[
+  { "sku": "NX-CEM-50", "descripcion": "Cemento gris 50 kg", "precio": "₡6 450", "disponible": true },
+  { "sku": "NX-VAR-3", "descripcion": "Varilla #3 grado 40", "precio": "₡2 300", "disponible": true },
+  { "sku": "NX-GUA-NIT-L", "descripcion": "Guantes nitrilo talla L", "precio": "₡850", "disponible": true },
+  { "sku": "NX-GUA-TRA-L", "descripcion": "Guantes trabajo talla L", "precio": "₡1 250", "disponible": true },
+  { "sku": "NX-PVC-12", "descripcion": "Tubo PVC 1/2 SDR 13.5", "precio": "₡3 000", "disponible": true }
+]

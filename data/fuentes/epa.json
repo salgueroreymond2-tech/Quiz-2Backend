@@ -1,0 +1,7 @@
+[
+  { "sku": "EPA-CEM-50", "descripcion": "Cemento gris 50 kg", "precio": "7100", "disponible": true },
+  { "sku": "EPA-VAR-3", "descripcion": "Varilla #3 6 m", "precio": "2600", "disponible": true },
+  { "sku": "EPA-NIT-L", "descripcion": "Guante nitrilo grande", "precio": "900", "disponible": true },
+  { "sku": "EPA-TRA-L", "descripcion": "Guante trabajo grande", "precio": "1300", "disponible": true },
+  { "sku": "EPA-PVC-12", "descripcion": "Tubo PVC 1/2 SDR", "precio": "3050", "disponible": true }
+]

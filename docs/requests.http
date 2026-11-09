@@ -1,0 +1,64 @@
+@baseUrl = http://localhost:3000
+@productoId = 1
+@proveedorId = 1
+@equivalenciaId = 1
+@alertaId = 1
+
+### Estado
+GET {{baseUrl}}/health
+
+### Productos
+GET {{baseUrl}}/api/productos?q=cemento&page=1&limit=20
+
+POST {{baseUrl}}/api/productos
+Content-Type: application/json
+
+{"codigo_interno":"LIA-10","nombre":"Lija grano 100","descripcion":"Lija de prueba","categoria_id":1,"unidad":"unidad"}
+
+GET {{baseUrl}}/api/productos/{{productoId}}
+
+PATCH {{baseUrl}}/api/productos/{{productoId}}
+Content-Type: application/json
+
+{"descripcion":"Descripción actualizada"}
+
+GET {{baseUrl}}/api/productos/{{productoId}}/precios
+GET {{baseUrl}}/api/productos/{{productoId}}/historial?desde=2025-01-01&hasta=2030-01-01&proveedor_id={{proveedorId}}
+
+### Proveedores
+GET {{baseUrl}}/api/proveedores
+
+POST {{baseUrl}}/api/proveedores
+Content-Type: application/json
+
+{"codigo":"prueba","nombre":"Proveedor de prueba","tipo_fuente":"json","ruta_fuente":"prueba.json"}
+
+### Equivalencias
+GET {{baseUrl}}/api/equivalencias?producto_id={{productoId}}&activas=true
+
+POST {{baseUrl}}/api/equivalencias
+Content-Type: application/json
+
+{"producto_id":{{productoId}},"proveedor_id":{{proveedorId}},"sku_proveedor":"SKU-PRUEBA","descripcion_proveedor":"Descripción proveedor","factor_unidad":1}
+
+DELETE {{baseUrl}}/api/equivalencias/{{equivalenciaId}}
+
+### Capturas y ejecuciones
+POST {{baseUrl}}/api/capturas/ejecutar
+Content-Type: application/json
+
+{"proveedor_codigo":"novex"}
+
+GET {{baseUrl}}/api/capturas/ejecuciones?limit=20
+
+### Alertas
+GET {{baseUrl}}/api/alertas?solo_no_leidas=true
+PATCH {{baseUrl}}/api/alertas/{{alertaId}}/leida
+
+### Configuración
+GET {{baseUrl}}/api/configuracion
+
+PUT {{baseUrl}}/api/configuracion/umbral-alerta
+Content-Type: application/json
+
+{"umbral_pct":5}

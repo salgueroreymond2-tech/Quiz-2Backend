@@ -1,0 +1,2 @@
+import { Router } from 'express'; import * as controller from '../controllers/alertas.controller.js'; import { validate } from '../middleware/validate.js'; import { asyncHandler } from '../utils/asyncHandler.js'; import { alertasQuerySchema, idSchema } from '../schemas/comunes.schemas.js';
+const router = Router(); router.get('/', validate(alertasQuerySchema, 'query'), asyncHandler(controller.listar)); router.patch('/:id/leida', validate(idSchema, 'params'), asyncHandler(controller.marcarComoLeida)); export default router;

@@ -1,0 +1,13 @@
+import { Router } from 'express';
+import * as controller from '../controllers/productos.controller.js';
+import { validate } from '../middleware/validate.js';
+import { asyncHandler } from '../utils/asyncHandler.js';
+import { idSchema, productoSchema, productoPatchSchema, productosQuerySchema, historialQuerySchema } from '../schemas/comunes.schemas.js';
+const router = Router();
+router.get('/', validate(productosQuerySchema, 'query'), asyncHandler(controller.listar));
+router.post('/', validate(productoSchema), asyncHandler(controller.crear));
+router.get('/:id/precios', validate(idSchema, 'params'), asyncHandler(controller.precios));
+router.get('/:id/historial', validate(idSchema, 'params'), validate(historialQuerySchema, 'query'), asyncHandler(controller.historial));
+router.get('/:id', validate(idSchema, 'params'), asyncHandler(controller.obtener));
+router.patch('/:id', validate(idSchema, 'params'), validate(productoPatchSchema), asyncHandler(controller.actualizar));
+export default router;
